@@ -1,0 +1,45 @@
+section.new-tweet{
+  padding: 1em 0;
+}
+
+section.new-tweet:hover{
+  padding: 1em;
+  box-shadow: -1px 1px 5px 6px rgba(0,0,0,0.07);
+  border-radius: 0.25em;
+}
+
+h2{
+  margin: 0 0 0.5em 0;
+}
+
+textarea {
+  background: none;
+  width: 100%;
+  border: none;
+  border-bottom: 0.2em solid #545149;
+  margin-bottom: 0.5em;
+  resize: none;
+  height: 2em;
+}
+
+::placeholder {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+}
+
+input {
+  background: #4056A1;
+  font-family: 'Bungee', cursive;
+  color: #ffffff;
+  padding: 0.25em;
+  border-radius: 0.25em;
+}
+
+.counter {
+  float: right;
+  font-family: 'Bungee', cursive;
+}
+
+.error{
+  color: #FF5733;
+}
