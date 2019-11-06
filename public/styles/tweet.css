@@ -1,0 +1,71 @@
+article.tweet{
+  border: 0.2em solid #545149;
+  padding: 0.5em;
+  margin: 1em 0;
+  opacity: 0.8;
+}
+
+article.tweet:hover {
+  opacity: 1;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+}
+
+article.tweet header {
+  background: none;
+  height: 100px;
+  position: relative;
+}
+
+article.tweet header div#avatar {
+  position: absolute;
+  height: auto;
+  left: 1.5em;
+  top: 1.5em;
+}
+
+article.tweet header div#avatar img {
+  width: 70px;
+}
+
+article.tweet header div#userName h2 {
+  position: absolute;
+  left: 4em;
+  font-size: 1em;
+  line-height: 3em;
+}
+
+article.tweet header div.handle {
+  position: absolute;
+  top: 0.6em;
+  right: 1em;
+  color: #B0AFAF;
+  opacity: 0;
+}
+article.tweet:hover header div.handle {
+  opacity: 1;
+}
+
+article.tweet p {
+  border-bottom: 0.2em solid #545149;
+  padding: 1em 0.3em;
+  margin: auto;
+}
+
+article.tweet footer {
+  position: relative;
+  height: 2em;
+}
+
+article.tweet footer p {
+  position: absolute;
+  border: none;
+  font-size: 0.6em;
+}
+
+article.tweet footer div#icons {
+  position: absolute;
+  right: 0;
+  padding: 0.5em;
+  color: #4056A1;
+}
+
