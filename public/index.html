@@ -3,18 +3,28 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta charset="UTF-8">
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <!-- Google Font Embed -->
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -23,7 +33,67 @@
       <span>tweeter</span>
     </nav>
 
+    <header>
+      <div id="avatar">
+        <img src="images/profile-hex.png">
+      </div>
+      <br>
+      <div id="userName">
+        <h2>Stella Zhou</h2>
+      </div>
+    </header>
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets">
+          <textarea name="text" placeholder="What are you humming about?" id="typeBox" data-autosize></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter" value="140"></span>
+        </form>
+      </section>
+
+      <article class="tweet">
+        <header>
+          <div id="avatar">
+            <img src="images/profile-hex.png">
+          </div>
+          <div id="userName">
+            <h2>Stella Zhou</h2>
+          </div>
+          <div class="handle">@Sirlsaac</div>
+        </header>
+        <p>This is the second tweet, yoo ~~~!</p>
+        <footer>
+          <p>10 days ago</p>
+          <div id="icons">
+            <i class="material-icons">flag</i>
+            <i class="material-icons">repeat</i>
+            <i class="material-icons">favorite</i>
+          </div>
+        </footer>
+      </article>
+
+      <article class="tweet">
+          <header>
+            <div id="avatar">
+              <img src="images/profile-hex.png">
+            </div>
+            <div id="userName">
+              <h2>Stella Zhou</h2>
+            </div>
+            <div class="handle">@newWorld</div>
+          </header>
+          <p>This is the first tweet, hey ~~~!</p>
+          <footer>
+            <p>20 days ago</p>
+            <div id="icons">
+              <i class="material-icons">flag</i>
+              <i class="material-icons">repeat</i>
+              <i class="material-icons">favorite</i>
+            </div>
+          </footer>
+        </article>
+    </main>
   </body>
 </html>
