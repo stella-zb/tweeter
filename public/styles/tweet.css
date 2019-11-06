@@ -16,22 +16,18 @@ article.tweet header {
   position: relative;
 }
 
-article.tweet header div#avatar {
+article.tweet header img {
   position: absolute;
-  height: auto;
-  left: 1.5em;
-  top: 1.5em;
-}
-
-article.tweet header div#avatar img {
+  left: 0.5em;
+  top: 0.5em;
   width: 70px;
 }
 
-article.tweet header div#userName h2 {
+article.tweet header h2 {
   position: absolute;
   left: 4em;
   font-size: 1em;
-  line-height: 3em;
+  line-height: 3.5em;
 }
 
 article.tweet header div.handle {
