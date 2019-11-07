@@ -5,6 +5,15 @@
  */
 $(document).ready(function() {
 
+  // change navbar when scrolling (in progress)
+  $(window).scroll(function() {
+    if ($(this).scrollTop() >= $("nav").height()) {
+      $("nav").addClass("scrolled");
+    } else {
+      $("nav").removeClass("scrolled");
+    }
+  })
+
   // function handle the sumbit request from html
   $('#submitForm').submit(function(event) {
     event.preventDefault();
@@ -17,6 +26,7 @@ $(document).ready(function() {
       return alert('Opp, too much characters');
     }
 
+    // post data to server
     $.ajax({ 
       data: $("#submitForm").serialize(),
       method: "POST",
@@ -32,8 +42,9 @@ $(document).ready(function() {
   
   });
   
-  // function get the posts from server
+  // function load the posts from server
   const loadtweets = () => {
+    // get data from server
     $.ajax({
       url: "/tweets",
       method: "GET",
@@ -54,7 +65,13 @@ $(document).ready(function() {
   
   // function generate HTML template for tweet object
   const createTweetElement = (tweet) => {
-    let $tweet = $("<article>").addClass("tweet");
+    const escape =  function(str) {
+      let div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    }
+
+    const $tweet = $("<article>").addClass("tweet");
     
     let tweetTime = new Date(tweet.created_at);
     const tweetMarkup = `
@@ -63,7 +80,7 @@ $(document).ready(function() {
         <h2 id="userName">${tweet.user.name}</h2>
         <div class="handle">${tweet.user.handle}</div>
       </header>
-      <p>${tweet.content.text}</p>
+      <p>${escape(tweet.content.text)}</p>
       <footer>
         <p>${tweetTime.toLocaleString()}</p>
         <div id="icons">
