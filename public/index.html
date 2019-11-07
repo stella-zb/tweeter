@@ -46,13 +46,13 @@
     <main class="tweets-container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets">
+        <form method="POST" action="/tweets" id="sumbitForm">
           <textarea name="text" placeholder="What are you humming about?" id="typeBox" data-autosize></textarea>
-          <input type="submit" value="Tweet">
+          <input type="submit" value="Tweet" id="postTweet">
           <span class="counter" value="140"></span>
         </form>
       </section>
-      
+
     </main>
   </body>
 </html>

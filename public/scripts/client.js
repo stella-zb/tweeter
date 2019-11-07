@@ -30,18 +30,36 @@ const data = [
 ]
 
 $(document).ready(function() {
+  $('#submitForm').submit(function(event) {
+    // prevent the default of sending request 
+    event.preventDefault();
+    $.ajax({ 
+      data: $("#submitForm").serialize(),
+      method: "POST",
+      url: "/tweets",
+      dataType: "json"
+    })
+    .then(function(input) {
+      console.log(input);
+    })
+    .fail(function(err) {
+      alert( `error: ${err.status}`);
+    });
+  });
+
   const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
     for (const tweet of tweets) {
-      $('.tweets-container').append(createTweetElement(tweet));
+      $(".tweets-container").append(createTweetElement(tweet));
     }
   }
   
   const createTweetElement = (tweet) => {
-    let $tweet = $('<article>').addClass('tweet');
-
+    // HTML template for tweet object
+    let $tweet = $("<article>").addClass("tweet");
+    
     let tweetTime = new Date(tweet.created_at);
     const tweetMarkup = `
       <header>
