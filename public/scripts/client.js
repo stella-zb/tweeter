@@ -3,8 +3,8 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
 $(document).ready(function() {
+
   // function handle the sumbit request from html
   $('#submitForm').submit(function(event) {
     event.preventDefault();
@@ -24,14 +24,14 @@ $(document).ready(function() {
       dataType: "json"
     })
     .then(function(input) {
-      console.log(input);
+      $(".tweets-container").prepend(createTweetElement(input));
     })
     .fail(function(err) {
       alert( `error: ${err.status}`);
     });
   
   });
-
+  
   // function get the posts from server
   const loadtweets = () => {
     $.ajax({
@@ -48,7 +48,7 @@ $(document).ready(function() {
   // function loop through tweets, callback createTweetElement function
   const renderTweets = (tweets) => {
     for (const tweet of tweets) {
-      $(".tweets-container").append(createTweetElement(tweet));
+      $(".tweets-container").prepend(createTweetElement(tweet));
     }
   }
   

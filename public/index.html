@@ -43,16 +43,17 @@
       </div>
     </header>
     <!-- Page-specific (main) content here -->
-    <main class="tweets-container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets" id="submitForm">
-          <textarea name="text" placeholder="What are you humming about?" id="typeBox" data-autosize></textarea>
-          <input type="submit" value="Tweet" id="postTweet">
-          <span class="counter" value="140">140</span>
-        </form>
-      </section>
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form method="POST" action="/tweets" id="submitForm">
+        <textarea name="text" placeholder="What are you humming about?" id="typeBox" data-autosize></textarea>
+        <input type="submit" value="Tweet" id="postTweet">
+        <span class="counter" value="140">140</span>
+      </form>
+    </section>
 
+    <main class="tweets-container">
+      
     </main>
   </body>
 </html>
