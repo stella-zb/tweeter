@@ -5,7 +5,9 @@
  */
 $(document).ready(function() {
 
-  // // change navbar when scrolling
+  $(".validationError").hide();
+
+  // change navbar when scrolling
   $(window).scroll(function() {
     if ($(this).scrollTop() >= 50) {
       $("nav").addClass("scrolled");
@@ -14,21 +16,37 @@ $(document).ready(function() {
     }
   });
 
+  // toggle button for tweet post
   $(".tweet-button").click(function() {
     $(".new-tweet").slideToggle();
     $("#typeBox").focus();
+    $(".validationError").hide();
+    // $("#typeBox").removeClass('errorHighlight');
   });
-
+  
   // function handle the sumbit request from html
   $("#submitForm").submit(function(event) {
     event.preventDefault();
-    
+    $(".validationError").hide();
+    $("#typeBox").removeClass('errorHighlight');
+
+    // validation before past to ajax
     const inputLength = $("#typeBox").val().length;
     if (inputLength === 0) {
-      return alert("Yoo, you need to type something!");
+      $(".validationError").html(`
+        <i class="material-icons">error</i>
+        <p>Yoo, you need to type something!</p>
+      `);
+      $("#typeBox").addClass('errorHighlight').focus();
+      return $(".validationError").slideDown("fast");
     }
     if (inputLength > 140) { 
-      return alert("Opp, too much characters");
+      $(".validationError").html(`
+        <i class="material-icons">error</i>
+        <p>Ypp, too much characters!</p>
+      `);
+      $("#typeBox").addClass('errorHighlight').focus();
+      return $(".validationError").slideDown("fast");
     }
 
     // post data to server

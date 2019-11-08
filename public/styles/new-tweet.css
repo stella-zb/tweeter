@@ -2,6 +2,22 @@ section.new-tweet{
   padding: 1.5em;
 }
 
+.validationError {
+  background: #363636;
+  padding: 1em 1.5em;
+  color: #ffffff;
+  display: flex;
+}
+.validationError .material-icons {
+  color: #FF5733;
+  padding: 0 0.5em 0 0;
+  font-size: 2em;
+}
+.validationError p {
+  font-size: 25px;
+  margin: 0.3em;
+}
+
 h2{
   margin: 0 0 0.5em 0;
 }
@@ -14,7 +30,7 @@ textarea {
   margin-bottom: 0.5em;
   resize: none;
   height: 2em;
-  outline:0px;
+  outline: 0px;
 }
 
 ::placeholder {
@@ -28,7 +44,7 @@ input {
   color: #ffffff;
   padding: 0.25em;
   border-radius: 0.25em;
-  outline:0px;
+  outline: 0;
 }
 
 .counter {
@@ -36,6 +52,13 @@ input {
   font-family: 'Bungee', cursive;
 }
 
-.error{
+.error {
   color: #FF5733;
+}
+
+.errorHighlight{
+  box-shadow: 0 0 5px rgb(238, 91, 81);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgb(238, 91, 81);
 }
