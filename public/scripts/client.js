@@ -5,25 +5,30 @@
  */
 $(document).ready(function() {
 
-  // change navbar when scrolling (in progress)
+  // // change navbar when scrolling
   $(window).scroll(function() {
-    if ($(this).scrollTop() >= $("nav").height()) {
+    if ($(this).scrollTop() >= 50) {
       $("nav").addClass("scrolled");
     } else {
       $("nav").removeClass("scrolled");
     }
-  })
+  });
+
+  $(".tweet-button").click(function() {
+    $(".new-tweet").slideToggle();
+    $("#typeBox").focus();
+  });
 
   // function handle the sumbit request from html
-  $('#submitForm').submit(function(event) {
+  $("#submitForm").submit(function(event) {
     event.preventDefault();
     
     const inputLength = $("#typeBox").val().length;
     if (inputLength === 0) {
-      return alert('Yoo, you need to type something!');
+      return alert("Yoo, you need to type something!");
     }
     if (inputLength > 140) { 
-      return alert('Opp, too much characters');
+      return alert("Opp, too much characters");
     }
 
     // post data to server
@@ -66,14 +71,14 @@ $(document).ready(function() {
   // function generate HTML template for tweet object
   const createTweetElement = (tweet) => {
     const escape =  function(str) {
-      let div = document.createElement('div');
+      const div = document.createElement('div');
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
     }
 
     const $tweet = $("<article>").addClass("tweet");
     
-    let tweetTime = new Date(tweet.created_at);
+    const tweetTime = new Date(tweet.created_at);
     const tweetMarkup = `
       <header>
         <img src="${tweet.user.avatars}">

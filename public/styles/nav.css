@@ -5,7 +5,73 @@ nav {
   height: 120px;
   width: 100%;
   z-index: 1;
-  background-color: #4056A1;
+  background-color: #faa700;
   color: #ffffff;
   padding: 1.5em;
 }
+
+nav.scrolled {
+  max-block-size: 80%;
+}
+
+button.tweet-button {
+  background: none;
+  transform: translate(0%, -20%);
+  color: #ffffff;
+  padding: 1em;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  float: right;
+  border: none;
+  /* border-bottom: 1px solid #4056A1;
+  padding-bottom: 1em;
+  text-decoration: none; */
+}
+
+button.tweet-button:active {
+  outline: none;
+}
+
+.arrowBounce .material-icons {
+  padding: .5em;
+  transform: rotate(90deg);
+  color: #F7590A;
+}
+
+.arrowBounce .material-icons:hover {
+  animation: bounce .5s infinite;
+}
+@keyframes bounce {
+  from {
+    transform: translateY(0) rotate(90deg);
+  }
+  to {
+    transform: translateY(-10px) rotate(90deg) ;
+  }
+}
+
+/* button.tweet-button:hover {
+  color: #4056A1;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: auto 6px;
+  border-bottom: 0;
+  text-decoration: none;
+} */
+
+/* button.tweet-button::after {
+  content: '';
+  display: block;
+  border-bottom: solid 3px #4056A1;  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+  padding: 5px;
+}
+
+button.tweet-button:hover::after {
+  transform: scaleX(1);
+} */
+
+
+

@@ -31,6 +31,12 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
+      <button class="tweet-button">
+        <strong>Write</strong> a new tweet
+        <div class="arrowBounce">
+            <i class="material-icons">double_arrow</i>
+        </div>
+      </button>
     </nav>
 
     <header>
@@ -48,7 +54,7 @@
       <form method="POST" action="/tweets" id="submitForm">
         <textarea name="text" placeholder="What are you humming about?" id="typeBox" data-autosize></textarea>
         <input type="submit" value="Tweet" id="postTweet">
-        <span class="counter" value="140">140</span>
+        <span class="counter">140</span>
       </form>
     </section>
 
