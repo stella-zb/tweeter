@@ -1,3 +1,9 @@
+main.tweets-container {
+  width: 90%;
+  margin: auto;
+  padding: 1em 0;
+}
+
 article.tweet{
   border: 0.2em solid #545149;
   padding: 0.5em;
@@ -45,6 +51,7 @@ article.tweet p {
   border-bottom: 0.2em solid #545149;
   padding: 1em 0.3em;
   margin: auto;
+  word-wrap: break-word;
 }
 
 article.tweet footer {
@@ -65,3 +72,10 @@ article.tweet footer div#icons {
   color: #4056A1;
 }
 
+/* Tablet Styles */
+@media (min-width: 768px) {
+  .content {
+    margin-top: 87px;
+    width: 100%;
+  }
+}

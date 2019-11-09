@@ -5,47 +5,49 @@
  */
 $(document).ready(function() {
 
+  // hide validation message when page loaded
   $(".validationError").hide();
-
-  // change navbar when scrolling
-  $(window).scroll(function() {
-    if ($(this).scrollTop() >= 50) {
-      $("nav").addClass("scrolled");
-    } else {
-      $("nav").removeClass("scrolled");
-    }
-  });
 
   // toggle button for tweet post
   $(".tweet-button").click(function() {
     $(".new-tweet").slideToggle();
+    // let user type right away
     $("#typeBox").focus();
+    // hide the error message after close up tweet toggle
     $(".validationError").hide();
-    // $("#typeBox").removeClass('errorHighlight');
   });
   
   // function handle the sumbit request from html
   $("#submitForm").submit(function(event) {
+    // avoid default sumbit sending request
     event.preventDefault();
+    // hide validation message before validation
     $(".validationError").hide();
+    // remove the red highlight around input box when re-submit
     $("#typeBox").removeClass('errorHighlight');
 
     // validation before past to ajax
     const inputLength = $("#typeBox").val().length;
+    // if there is no input
     if (inputLength === 0) {
+      // error message for no input
       $(".validationError").html(`
-        <i class="material-icons">error</i>
-        <p>Yoo, you need to type something!</p>
+        <p><i class="material-icons">error</i>Yoo, you need to type something!</p>
       `);
+      // add red highlight around input box
       $("#typeBox").addClass('errorHighlight').focus();
+      // slidedown the validation error message
       return $(".validationError").slideDown("fast");
     }
+    // if the input is over the limit
     if (inputLength > 140) { 
+      // error message for over limit
       $(".validationError").html(`
-        <i class="material-icons">error</i>
-        <p>Ypp, too much characters!</p>
+        <p><i class="material-icons">error</i>Ypp, too much characters!</p>
       `);
+      // add red highlight around input box
       $("#typeBox").addClass('errorHighlight').focus();
+      // slidedown the validation error message
       return $(".validationError").slideDown("fast");
     }
 
@@ -57,9 +59,11 @@ $(document).ready(function() {
       dataType: "json"
     })
     .then(function(input) {
+      // post the new tweet to the tweets container
       $(".tweets-container").prepend(createTweetElement(input));
     })
     .fail(function(err) {
+      // catch error
       alert( `error: ${err.status}`);
     });
   
@@ -73,6 +77,7 @@ $(document).ready(function() {
       method: "GET",
     })
     .then(function(tweets) {
+      // load the posts
       renderTweets(tweets)
     });
   }
@@ -88,6 +93,7 @@ $(document).ready(function() {
   
   // function generate HTML template for tweet object
   const createTweetElement = (tweet) => {
+    // safe text, not taking the value of the input
     const escape =  function(str) {
       const div = document.createElement('div');
       div.appendChild(document.createTextNode(str));
@@ -95,8 +101,9 @@ $(document).ready(function() {
     }
 
     const $tweet = $("<article>").addClass("tweet");
-    
+    // tweet time
     const tweetTime = new Date(tweet.created_at);
+    // template for tweet post
     const tweetMarkup = `
       <header>
         <img src="${tweet.user.avatars}">

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // how much character left to type in the tweet
   $( "#typeBox" ).on("input", function() {
     const maxLength = 140;
     const textLength = $(this).val().length;
@@ -11,11 +12,9 @@ $(document).ready(function() {
     $(counter).text(maxLength - textLength);
   });
 
-  $( "#typeBox[data-autosize]").on("input", function() {
-    const offset = this.offsetHeight - this.clientHeight;
-    const resizeTextArea = (text) => {
-      $(text).css('height', this.scrollHeight + offset);
-    }
-    resizeTextArea(this);
+  // textarea auto resize for input
+  $( "#typeBox").on("input", function() {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
   });
 });

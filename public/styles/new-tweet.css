@@ -1,21 +1,34 @@
 section.new-tweet{
   padding: 1.5em;
+  display: none;
 }
 
 .validationError {
   background: #363636;
-  padding: 1em 1.5em;
   color: #ffffff;
-  display: flex;
+  border-radius: 10px;
+  position: relative;
 }
+
+.validationError:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 40px;
+  color: #363636;
+  border-top: 25px solid #363636;
+  border-top-color: inherit;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+
 .validationError .material-icons {
   color: #FF5733;
-  padding: 0 0.5em 0 0;
-  font-size: 2em;
+  padding: 1%;
 }
+
 .validationError p {
-  font-size: 25px;
-  margin: 0.3em;
+  padding: 2%;
 }
 
 h2{
@@ -58,7 +71,12 @@ input {
 
 .errorHighlight{
   box-shadow: 0 0 5px rgb(238, 91, 81);
-  padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;
-  border: 1px solid rgb(238, 91, 81);
+  padding: 6px;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+  section.new-tweet {
+    padding: 12% 5% 0;
+  }
 }
