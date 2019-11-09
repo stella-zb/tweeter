@@ -47,13 +47,13 @@ textarea {
 }
 
 ::placeholder {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: bold;
 }
 
 input {
   background: #4056A1;
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
   color: #ffffff;
   padding: 0.25em;
   border-radius: 0.25em;
@@ -62,7 +62,7 @@ input {
 
 .counter {
   float: right;
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
 }
 
 .error {

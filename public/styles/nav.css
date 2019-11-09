@@ -1,5 +1,5 @@
 nav {
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
   position: fixed;
   top: 0;
   height: 100px;
@@ -14,7 +14,7 @@ button.tweet-button {
   transform: translate(0%, -20%);
   color: #ffffff;
   padding: 1em;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 20px;
   float: right;
   border: none;
@@ -38,7 +38,7 @@ button.tweet-button:hover .arrowBounce .material-icons {
     transform: translateY(0) rotate(90deg);
   }
   to {
-    transform: translateY(-10px) rotate(90deg) ;
+    transform: translateY(-10px) rotate(90deg);
   }
 }
 

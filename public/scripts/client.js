@@ -24,7 +24,7 @@ $(document).ready(function() {
     // hide validation message before validation
     $(".validationError").hide();
     // remove the red highlight around input box when re-submit
-    $("#typeBox").removeClass('errorHighlight');
+    $("#typeBox").removeClass("errorHighlight");
 
     // validation before past to ajax
     const inputLength = $("#typeBox").val().length;
@@ -35,36 +35,34 @@ $(document).ready(function() {
         <p><i class="material-icons">error</i>Yoo, you need to type something!</p>
       `);
       // add red highlight around input box
-      $("#typeBox").addClass('errorHighlight').focus();
+      $("#typeBox").addClass("errorHighlight").focus();
       // slidedown the validation error message
       return $(".validationError").slideDown("fast");
     }
     // if the input is over the limit
-    if (inputLength > 140) { 
+    if (inputLength > 140) {
       // error message for over limit
       $(".validationError").html(`
         <p><i class="material-icons">error</i>Ypp, too much characters!</p>
       `);
       // add red highlight around input box
-      $("#typeBox").addClass('errorHighlight').focus();
+      $("#typeBox").addClass("errorHighlight").focus();
       // slidedown the validation error message
       return $(".validationError").slideDown("fast");
     }
 
     // post data to server
-    $.ajax({ 
+    $.ajax({
       data: $("#submitForm").serialize(),
       method: "POST",
       url: "/tweets",
       dataType: "json"
-    })
-    .then(function(input) {
+    }).then(function(input) {
       // post the new tweet to the tweets container
       $(".tweets-container").prepend(createTweetElement(input));
-    })
-    .fail(function(err) {
+    }).fail(function(err) {
       // catch error
-      alert( `error: ${err.status}`);
+      alert(`error: ${err.status}`);
     });
   
   });
@@ -75,12 +73,11 @@ $(document).ready(function() {
     $.ajax({
       url: "/tweets",
       method: "GET",
-    })
-    .then(function(tweets) {
+    }).then(function(tweets) {
       // load the posts
-      renderTweets(tweets)
+      renderTweets(tweets);
     });
-  }
+  };
 
   loadtweets();
 
@@ -89,16 +86,16 @@ $(document).ready(function() {
     for (const tweet of tweets) {
       $(".tweets-container").prepend(createTweetElement(tweet));
     }
-  }
+  };
   
   // function generate HTML template for tweet object
   const createTweetElement = (tweet) => {
     // safe text, not taking the value of the input
     const escape =  function(str) {
-      const div = document.createElement('div');
+      const div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
-    }
+    };
 
     const $tweet = $("<article>").addClass("tweet");
     // tweet time
@@ -120,9 +117,9 @@ $(document).ready(function() {
         <div>
       </footer>
     `;
-    $tweet.append(tweetMarkup)
+    $tweet.append(tweetMarkup);
 
     return $tweet;
-  }
+  };
 
 });
