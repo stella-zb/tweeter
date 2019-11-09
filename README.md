@@ -30,4 +30,4 @@ Tweeter is a simple client-side Single Page App which communicates with a server
 - Input Validation
 
 ## Final Product
-!["Screenshot of page]()
+!["Screenshot of page](https://github.com/stella-zb/tweeter/blob/master/tweet-page.png)
