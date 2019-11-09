@@ -43,7 +43,7 @@ $(document).ready(function() {
     if (inputLength > 140) {
       // error message for over limit
       $(".validationError").html(`
-        <p><i class="material-icons">error</i>Ypp, too much characters!</p>
+        <p><i class="material-icons">error</i>Oops, too many characters!</p>
       `);
       // add red highlight around input box
       $("#typeBox").addClass("errorHighlight").focus();
