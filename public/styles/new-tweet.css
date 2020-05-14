@@ -1,4 +1,4 @@
-section.new-tweet{
+section.new-tweet {
   padding: 1.5em;
   display: none;
 }
@@ -23,7 +23,7 @@ section.new-tweet{
 }
 
 .validationError .material-icons {
-  color: #FF5733;
+  color: #ff5733;
   padding: 1%;
 }
 
@@ -31,7 +31,7 @@ section.new-tweet{
   padding: 2%;
 }
 
-h2{
+h2 {
   margin: 0 0 0.5em 0;
 }
 
@@ -52,7 +52,7 @@ textarea {
 }
 
 input {
-  background: #4056A1;
+  background: #4056a1;
   font-family: "Bungee", cursive;
   color: #ffffff;
   padding: 0.25em;
@@ -61,7 +61,7 @@ input {
 
 input:hover {
   letter-spacing: 2px;
-  box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+  box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
 }
 
 .counter {
@@ -70,10 +70,10 @@ input:hover {
 }
 
 .error {
-  color: #FF5733;
+  color: #ff5733;
 }
 
-.errorHighlight{
+.errorHighlight {
   box-shadow: 0 0 5px rgb(238, 91, 81);
   padding: 6px;
 }
@@ -81,6 +81,6 @@ input:hover {
 /* Tablet Styles */
 @media (min-width: 768px) {
   section.new-tweet {
-    padding: 12% 5% 0;
+    padding: 12% 5% 5%;
   }
 }

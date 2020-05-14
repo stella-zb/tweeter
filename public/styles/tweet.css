@@ -4,7 +4,7 @@ main.tweets-container {
   padding: 1em 0;
 }
 
-article.tweet{
+article.tweet {
   border: 0.2em solid #545149;
   padding: 0.5em;
   margin: 1em 0;
@@ -40,7 +40,7 @@ article.tweet header div.handle {
   position: absolute;
   top: 0.6em;
   right: 1em;
-  color: #B0AFAF;
+  color: #b0afaf;
   opacity: 0;
 }
 article.tweet:hover header div.handle {
@@ -69,13 +69,13 @@ article.tweet footer div#icons {
   position: absolute;
   right: 0;
   padding: 0.5em;
-  color: #4056A1;
+  color: #4056a1;
 }
 
 /* Tablet Styles */
 @media (min-width: 768px) {
   .content {
     margin-top: 87px;
-    width: 100%;
+    width: 70%;
   }
 }
